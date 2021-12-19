@@ -1,0 +1,99 @@
+$spacer: 1rem !default;
+
+// Colors
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #000 !default;
+
+$blue: #0866C6 !default;
+$indigo: #6610f2 !default;
+$purple: #6f42c1 !default;
+$pink: #e83e8c !default;
+$red: #FF6238 !default;
+$orange: #fd7e14 !default;
+$yellow: #FCC300 !default;
+$green: #79CE4B !default;
+$teal: #20c997 !default;
+$cyan: #17a2b8 !default;
+$dark-blue: #1D2939 !default;
+
+$colors: () !default;
+$colors: map-merge(
+  (
+	"yellow":  $yellow
+  ),
+  $colors
+);
+
+$theme-colors: () !default;
+$theme-colors: map-merge(
+  (
+	"yellow":  $yellow
+  ),
+  $theme-colors
+);
+
+$primary: $yellow !default;
+$secondary: $gray-600 !default;
+$success: $green !default;
+$info: $cyan !default;
+$warning: $red !default;
+$danger: $red !default;
+$light: $gray-300 !default;
+$dark: $gray-800 !default;
+
+$link-color: $gray-700 !default;
+
+
+// Fonts
+$fa-font-path: "../fonts" !default;
+$line-height-base: 1.75 !default;
+$font-size-base: 1rem !default;
+$font-size-lg: $font-size-base * 1.5 !default;
+$font-size-sm: $font-size-base * .750 !default;
+
+$font-weight-light: 200;
+$font-weight-base: 500;
+$font-weight-bold: 900;
+$font-family-sans-serif: "Gilroy", Arial, sans-serif !default;
+$font-family-monospace: "Gilroy", Arial, sans-serif, monospace !default;
+$font-family-base: $font-family-sans-serif !default;
+
+
+// Headers
+$h1-font-size: $font-size-base * 2 !default;
+$h2-font-size: $font-size-base * 1.75 !default;
+$h3-font-size: $font-size-base * 1.5 !default;
+$h4-font-size: $font-size-base * 1.2 !default;
+$h5-font-size: $font-size-base * 1.1 !default;
+$h6-font-size: $font-size-base !default;
+$headings-font-weight: 600 !default;
+$headings-margin-bottom: $spacer * 1.25 !default;
+
+
+// Body
+$body-bg: #FBF9F7 !default;
+$body-color: #000 !default;
+
+
+// Borders
+$border-width: 1px !default;
+$table-border-width: $border-width !default;
+$border-color: $yellow !default;
+$table-border-color: $border-color !default;
+
+$border-radius: 8px;
+$border-radius-lg: 8px;
+$border-radius-sm: 8px;
+
+$input-border-color: transparent;
+
+$btn-padding-y: 0;
+$btn-padding-x: 24px;
+$btn-line-height: 46px;

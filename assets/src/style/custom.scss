@@ -1,0 +1,138 @@
+*,
+html,
+body {
+	padding: 0;
+	margin: 0;
+	font-size: 16px;
+	line-height: 20px;
+	font-style: normal;
+}
+
+textarea:focus, input:focus, select:focus, select:active {
+	outline: 0;
+	outline-offset: 0;
+}
+
+video {
+	width: 100% !important;
+	height: 100vh !important;
+	position: absolute !important;
+	top: 0 !important;
+	left: 0 !important;
+	background: transparent !important;
+	z-index: 125 !important;
+	transform: none !important;
+}
+
+/******************************* Bootstrap *******************************/
+.container {
+	padding-right: 24px;
+	padding-left: 24px;
+}
+
+.form-control {
+	background: #FFF;
+	line-height: 46px;
+	padding: 0 20px;
+	height: initial;
+	font-size: 16px;
+	box-shadow: 0 2px 8px #96909040;
+}
+
+.input-group {
+	position: relative;
+}
+
+.input-group .group-icon-help {
+	position: absolute;
+	z-index: 10;
+	top: 0;
+	right: 0;
+	width: 80px;
+	height: 100%;
+	text-align: center;
+}
+
+.input-group .group-icon-help .icon {
+	font-size: 25px;
+	line-height: 2;
+}
+
+.input-group.password .icon {
+	cursor: pointer;
+}
+
+.input-group .btn.btn-danger {
+	color: #ff6238;
+	background: #ff62381a;
+}
+
+.input-group .btn.btn-loading {
+	color: transparent;
+	background-image: url(../img/preloader.svg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: auto 50%;
+}
+
+.input-group > .custom-select:not(:first-child),
+.input-group > .form-control:not(:first-child) {
+	border-top-left-radius: 8px;
+	border-bottom-left-radius: 8px;
+}
+
+.root-component {
+	width: 100%;
+	height: 100vh;
+	max-height: 100vh;
+	overflow: hidden;
+	position: relative;
+}
+
+/******************************* APP *******************************/
+#APP {
+	overflow: hidden;
+	height: 100vh;
+	max-height: 100vh;
+	background: transparent;
+}
+
+/******************************* AUTH *******************************/
+#AUTH {
+	display: flex;
+	justify-content: center;
+	vertical-align: middle;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+#AUTH .input-group .btn {
+	width: 100%;
+}
+
+#AUTH .contact-info {
+	position: absolute;
+	bottom: 50px;
+	width: 100%;
+	text-align: center;
+}
+
+#AUTH .contact-info > div {
+	margin: 0 auto;
+	font-size: 13px;
+	line-height: 15px;
+	max-width: 270px;
+}
+
+#AUTH .contact-info > div:last-child {
+	margin: 5px auto;
+	font-size: 24px;
+	line-height: 28px;
+	max-width: 280px;
+}
+
+#AUTH .logotype {
+	display: flex;
+	height: 65px;
+	margin-bottom: 35px;
+}
