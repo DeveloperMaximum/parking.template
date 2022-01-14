@@ -1,28 +1,18 @@
 <!doctype html>
 <html lang="ru">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <link rel="stylesheet" href="css/main.min.css" />
+    //= template/head.html
 </head>
 <body>
     <div id="APP" class="container-fluid p-0">
-        <div id="HOME" class="root-component">
+        <div id="HOME" class="root-component d-flex flex-column">
 
             <header>
-                <h1 class="d-inline-block pt-4 pb-3">Константин</h1>
-                <i class="icon-chevron_right d-inline-block"></i>
-                <form id="SEARCH-FORM" class="d-block pb-3 d-flex">
-                    <div class="input-group">
-                        <div class="group-inner-left-icon">
-                            <i class="icon icon-search"></i>
-                        </div>
-                        <input autoComplete="off" min="1" type="text" name="SEARCH" value="" class="form-control" placeholder="Поиск по марке и VIN"/>
-                    </div>
-                    <button type="button" class="btn btn-primary position-relative">
-                        <i class="icon-qr_code"></i>
-                    </button>
-                </form>
+                <div class="d-flex pb-2">
+                    <h1 class="d-inline-block">Константин</h1>
+                    <i class="icon-chevron_right d-inline-block"></i>
+                </div>
+                //= template/search.html
             </header>
 
             <main>
@@ -92,28 +82,7 @@
                 </div>
             </main>
 
-            <footer class="d-flex w-100 pt-2 text-center">
-                <div class="flex-fill active">
-                    <i class="icon-directions_car"></i>
-                    <div>Главная</div>
-                </div>
-                <div class="flex-fill">
-                    <i class="icon-directions_car"></i>
-                    <div>Тест-драйв</div>
-                </div>
-                <div class="flex-fill">
-                    <i class="icon-directions_car"></i>
-                    <div>Главная</div>
-                </div>
-                <div class="flex-fill">
-                    <i class="icon-directions_car"></i>
-                    <div>Главная</div>
-                </div>
-                <div class="flex-fill">
-                    <i class="icon-handyman"></i>
-                    <div>Еще</div>
-                </div>
-            </footer>
+            //= template/footer.html
 
         </div>
     </div>
