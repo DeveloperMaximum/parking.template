@@ -40,9 +40,9 @@ $theme-colors: map-merge(
 );
 
 $primary: $yellow !default;
-$secondary: $gray-600 !default;
+$secondary: #DFEEFF !default;
 $success: $green !default;
-$info: $cyan !default;
+$info: #F4F9FF !default;
 $warning: $red !default;
 $danger: $red !default;
 $light: $gray-300 !default;
