@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    //= template/head.html
+</head>
+<body>
+<div id="APP" class="container-fluid p-0">
+    <div id="NECESSITATE" class="root-component d-flex flex-column">
+
+        <header>
+            <div class="d-flex">
+                <i class="icon icon-chevron_left d-inline-block"></i>
+                <h1 class="d-inline-block d-inline-block">Потребности</h1>
+            </div>
+        </header>
+
+        <header class="d-flex align-items-center">
+            <div class="thumb">
+                <img src="tiles/car.png" />
+            </div>
+            <div>
+                <div>
+                    <b>Mercedes-Benz E-Класс W213</b>
+                </div>
+                <div>Сектор В , подсектор 2</div>
+            </div>
+        </header>
+
+        <main>
+            <div class="sticker">
+                <div class="btn btn-primary d-block w-100">Сформировать</div>
+            </div>
+            <div class="content-wrapper">
+                <div class="btn-checkbox">
+                    <div>
+                        <div>Подкачать колеса</div>
+                        <div class="btn-group">
+                            <button type="button" class="btn changed">Да</button>
+                            <button type="button" class="btn">Нет</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-checkbox">
+                    <div>
+                        <div>Аккумулятор</div>
+                        <div class="btn-group">
+                            <button type="button" class="btn active">Да</button>
+                            <button type="button" class="btn">Нет</button>
+                        </div>
+                    </div>
+                    <div class="added">
+                        <textarea placeholder="Оставьте комментарий" class="w-100 mt-3 mb-3 p-3" rows="3"></textarea>
+                    </div>
+                </div>
+                <div class="btn-checkbox">
+                    <div>
+                        <div>Локальная уборка</div>
+                        <div class="btn-group">
+                            <button type="button" class="btn">Да</button>
+                            <button type="button" class="btn active">Нет</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-checkbox">
+                    <div>
+                        <div>МКЦ</div>
+                        <div class="btn-group">
+                            <button type="button" class="btn">Да</button>
+                            <button type="button" class="btn active">Нет</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+    </div>
+
+    //= template/footer.html
+
+</div>
+</body>
+</html>

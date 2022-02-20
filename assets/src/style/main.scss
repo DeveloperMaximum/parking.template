@@ -15,7 +15,7 @@
 @import "../../../node_modules/bootstrap/scss/_root";
 @import "../../../node_modules/bootstrap/scss/_reboot";
 @import "../../../node_modules/bootstrap/scss/_type";
-@import "../../../node_modules/bootstrap/scss/_images";
+//@import "../../../node_modules/bootstrap/scss/_images";
 @import "../../../node_modules/bootstrap/scss/_code";
 @import "../../../node_modules/bootstrap/scss/_grid";
 @import "../../../node_modules/bootstrap/scss/_tables";
@@ -28,12 +28,12 @@
 @import "../../../node_modules/bootstrap/scss/_custom-forms";
 //@import "../../../node_modules/bootstrap/scss/_nav";
 //@import "../../../node_modules/bootstrap/scss/_navbar";
-//@import "../../../node_modules/bootstrap/scss/_card";
+@import "../../../node_modules/bootstrap/scss/_card";
 //@import "../../../node_modules/bootstrap/scss/_breadcrumb";
 //@import "../../../node_modules/bootstrap/scss/_pagination";
-//@import "../../../node_modules/bootstrap/scss/_badge";
+@import "../../../node_modules/bootstrap/scss/_badge";
 //@import "../../../node_modules/bootstrap/scss/_jumbotron";
-//@import "../../../node_modules/bootstrap/scss/_alert";
+@import "../../../node_modules/bootstrap/scss/_alert";
 //@import "../../../node_modules/bootstrap/scss/_progress";
 //@import "../../../node_modules/bootstrap/scss/_media";
 //@import "../../../node_modules/bootstrap/scss/_list-group";

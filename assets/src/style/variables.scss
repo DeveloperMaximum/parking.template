@@ -1,22 +1,35 @@
-$spacer: 1rem !default;
+
+$scanner-index: 15;
+$main-index: 25;
+$header-header-index: 30;
+$main-sticker-index: 30;
+$header-index: 35;
+$widget-index: 40;
+$footer-index: 50;
+
+$item-shadow: 0 0 20px rgba(95, 114, 147, 0.2);
+$hover-item-shadow: 0 0 20px rgba(95, 114, 147, 0.2);
+
+$spacer: 16px !default;
+$half-spacer: 8px !default;
 
 // Colors
-$gray-100: #f8f9fa !default;
-$gray-200: #e9ecef !default;
+$gray-100: #ffffff !default;
+$gray-200: #f2f2f1 !default;
 $gray-300: #dee2e6 !default;
 $gray-400: #ced4da !default;
 $gray-500: #adb5bd !default;
-$gray-600: #6c757d !default;
+$gray-600: #979797 !default;
 $gray-700: #495057 !default;
 $gray-800: #343a40 !default;
 $gray-900: #000 !default;
 
-$blue: #0866C6 !default;
+$blue: #3D86DD !default;
 $indigo: #6610f2 !default;
 $purple: #6f42c1 !default;
 $pink: #e83e8c !default;
-$red: #FF6238 !default;
-$orange: #fd7e14 !default;
+$red: #FF653C !default;
+$orange: #FC9A0E !default;
 $yellow: #FCC300 !default;
 $green: #79CE4B !default;
 $teal: #20c997 !default;
@@ -26,7 +39,6 @@ $dark-blue: #1D2939 !default;
 $colors: () !default;
 $colors: map-merge(
   (
-	"yellow":  $yellow
   ),
   $colors
 );
@@ -34,7 +46,6 @@ $colors: map-merge(
 $theme-colors: () !default;
 $theme-colors: map-merge(
   (
-	"yellow":  $yellow
   ),
   $theme-colors
 );
@@ -43,7 +54,7 @@ $primary: $yellow !default;
 $secondary: #DFEEFF !default;
 $success: $green !default;
 $info: #F4F9FF !default;
-$warning: $red !default;
+$orange: $red !default;
 $danger: $red !default;
 $light: $gray-300 !default;
 $dark: $gray-800 !default;
@@ -61,8 +72,8 @@ $font-size-sm: $font-size-base * .750 !default;
 $font-weight-light: 200;
 $font-weight-base: 500;
 $font-weight-bold: 900;
-$font-family-sans-serif: "Gilroy", Arial, sans-serif !default;
-$font-family-monospace: "Gilroy", Arial, sans-serif, monospace !default;
+$font-family-sans-serif: 'Red Hat Display', "Gilroy", Arial, sans-serif !default;
+$font-family-monospace: 'Red Hat Display', "Gilroy", Arial, sans-serif, monospace !default;
 $font-family-base: $font-family-sans-serif !default;
 
 
@@ -78,15 +89,11 @@ $headings-margin-bottom: $spacer * 1.25 !default;
 
 
 // Body
-//$body-bg: #FBF9F7 !default;
 $body-color: #000 !default;
 
 
 // Borders
 $border-width: 1px !default;
-$table-border-width: $border-width !default;
-$border-color: $yellow !default;
-$table-border-color: $border-color !default;
 
 $border-radius: 8px;
 $border-radius-lg: 8px;
@@ -103,3 +110,20 @@ $btn-active-box-shadow: none;
 
 $link-hover-decoration: none;
 $link-hover-color: $primary !default;
+
+
+// Badge
+$badge-border-radius: 90px;
+$badge-font-weight: 500;
+$badge-font-size: 75%;
+$badge-padding-x: 10px;
+
+
+// Card
+$card-border-color: transparent;
+$card-border-radius: 2px;
+$card-spacer-x: 16px;
+
+
+// Modal
+$modal-header-padding: 16px 16px 0 16px;

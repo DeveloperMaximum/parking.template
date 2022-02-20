@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    //= template/head.html
+</head>
+<body>
+    <div id="APP" class="container-fluid p-0">
+
+        <div id="SECTORS" class="root-component d-flex flex-column">
+
+            <header>
+                <div class="d-flex">
+                    <h1 class="d-inline-block">Список секторов</h1>
+                </div>
+            </header>
+
+            <main>
+
+                <div class="content-wrapper">
+
+                    //= template/filter.html
+
+                    <div class="sectors">
+                        <div class="item danger">
+                            <div class="d-flex">
+                                <div class="name">Навес тип 1</div>
+                            </div>
+                            <div class="filled">Сектор заполнен</div>
+                            <div class="cars">
+                                <div class="count">
+                                    <span>Авто</span>
+                                    <span>253</span>
+                                </div>
+                                <div class="count">
+                                    <span>Из них с потребностями</span>
+                                    <span>23</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item warning">
+                            <div class="d-flex">
+                                <div class="name">Навес тип 3</div>
+                            </div>
+                            <div class="filled">Сектор заполнен</div>
+                            <div class="cars">
+                                <div class="count">
+                                    <span>Авто</span>
+                                    <span>253</span>
+                                </div>
+                                <div class="count">
+                                    <span>Из них с потребностями</span>
+                                    <span>23</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item success">
+                            <div class="d-flex">
+                                <div class="name ">Навес тип 4</div>
+                            </div>
+                            <div class="filled">Сектор заполнен</div>
+                            <div class="cars">
+                                <div class="count">
+                                    <span>Авто</span>
+                                    <span>253</span>
+                                </div>
+                                <div class="count">
+                                    <span>Из них с потребностями</span>
+                                    <span>23</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            //= template/footer.html
+
+        </div>
+    </div>
+</body>
+</html>
