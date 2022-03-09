@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    //= template/head.html
+</head>
+<body>
+<div id="APP" class="container-fluid p-0">
+    <div id="FILTER" class="root-component d-flex flex-column">
+
+        <header>
+            <div class="d-flex pb-2">
+                <h1 class="d-inline-block">Поиск автомобилей</h1>
+                <i class="icon-chevron_right d-inline-block"></i>
+            </div>
+
+            //= template/search.html
+        </header>
+
+        <main>
+
+            <div class="search-filter">
+                <h1>Найти автомрбиль</h1>
+                <div class="filter-wrapper">
+                    <div class="item">
+                        <input type="text" placeholder="Марка" />
+                        <i class="icon icon-chevron_right"></i>
+                    </div>
+                    <div class="item">
+                        <input type="text" placeholder="Модель" />
+                        <i class="icon icon-chevron_right"></i>
+                    </div>
+                    <div class="item">
+                        <input type="number" placeholder="Год выпуска, от" />
+                    </div>
+                    <div class="item">
+                        <input type="number" placeholder="Год выпуска, до" />
+                    </div>
+                    <div class="item">
+                        <input type="number" placeholder="Цена, от" />
+                    </div>
+                    <div class="item">
+                        <input type="number" placeholder="Цена, до" />
+                    </div>
+                    <div class="item">
+                        <input type="text" placeholder="Тип кузова" />
+                        <i className="icon icon-chevron_right"></i>
+                    </div>
+                    <div class="item">
+                        <input type="text" placeholder="Коробка передач" />
+                        <i class="icon icon-chevron_right"></i>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        //= template/footer.html
+
+    </div>
+</div>
+</body>
+</html>
