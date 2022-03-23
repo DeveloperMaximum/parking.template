@@ -175,6 +175,35 @@ body.SCANNED #APP .root-component main {
 		max-height: 100vh;
 	}
 
+	.root-component.inner-root-component {
+		position: absolute;
+		z-index: 50;
+		top: 0;
+		right: -100vw;
+		height: initial;
+		max-height: initial;
+		background-color: #fff;
+
+		header {
+			position: fixed;
+			top: 0;
+		}
+
+		header + header {
+			position: fixed;
+			top: 60px;
+		}
+
+		main {
+			padding-top: 150px;
+			padding-bottom: 150px;
+		}
+	}
+
+	.root-component.inner-root-component.active {
+		right: 0;
+	}
+
 	.root-component#AUTH {
 		position: relative;
 		z-index: 25;
@@ -453,6 +482,12 @@ body.SCANNED #APP .root-component main {
 				text-align: center;
 				border-radius: 50%;
 				background: $info;
+
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				margin-top: -7px;
+				margin-left: -7px;
 			}
 		}
 	}
@@ -490,6 +525,7 @@ body.SCANNED #APP .root-component main {
 			padding-bottom: 70px;
 			background-color: $gray-100;
 			border-radius: 16px;
+			overflow-x: hidden;
 
 			.widget-meta {
 				font-size: 38px;
@@ -540,10 +576,11 @@ body.SCANNED #APP .root-component main {
 	.widget.widget-high {
 
 		.content {
-			min-height: 98vh;
-			max-height: 98vh;
+			min-height: 100vh;
+			max-height: 100vh;
 			overflow-y: scroll;
 			padding-top: 10px;
+			border-radius: 0;
 		}
 
 		.car {
@@ -787,7 +824,7 @@ body.SCANNED #APP .root-component main {
 				background-image: url(../tiles/4.png);
 			}
 
-			.sector-cell.tile.bushes-0:after {
+			.sector-cell.tile.tile-bushes-0:after {
 				background-image: url(../tiles/bushes-0.png);
 			}
 
@@ -795,155 +832,151 @@ body.SCANNED #APP .root-component main {
 				background-image: url(../tiles/bushes-1.png);
 			}
 
-			.sector-cell.tile.bushes-2:after {
+			.sector-cell.tile.tile-bushes-2:after {
 				background-image: url(../tiles/bushes-2.png);
 			}
 
-			.sector-cell.tile.tile-4:after {
-				background-image: url(../tiles/4.png);
-			}
-
-			.sector-cell.tile.house-0:after {
+			.sector-cell.tile.tile-house-0:after {
 				background-image: url(../tiles/house-0.png);
 			}
 
-			.sector-cell.tile.house-1:after {
+			.sector-cell.tile.tile-house-1:after {
 				background-image: url(../tiles/house-1.png);
 			}
 
-			.sector-cell.tile.house-2:after {
+			.sector-cell.tile.tile-house-2:after {
 				background-image: url(../tiles/house-2.png);
 			}
 
-			.sector-cell.tile.house-3:after {
+			.sector-cell.tile.tile-house-3:after {
 				background-image: url(../tiles/house-3.png);
 			}
 
-			.sector-cell.tile.house-3:after {
+			.sector-cell.tile.tile-house-3:after {
 				background-image: url(../tiles/house-3.png);
 			}
 
-			.sector-cell.tile.house-4:after {
+			.sector-cell.tile.tile-house-4:after {
 				background-image: url(../tiles/house-4.png);
 			}
 
-			.sector-cell.tile.house-5:after {
+			.sector-cell.tile.tile-house-5:after {
 				background-image: url(../tiles/house-5.png);
 			}
 
-			.sector-cell.tile.house-6:after {
+			.sector-cell.tile.tile-house-6:after {
 				background-image: url(../tiles/house-6.png);
 			}
 
-			.sector-cell.tile.house-7:after {
+			.sector-cell.tile.tile-house-7:after {
 				background-image: url(../tiles/house-7.png);
 			}
 
-			.sector-cell.tile.tree-0:after {
+			.sector-cell.tile.tile-tree-0:after {
 				background-image: url(../tiles/tree-0.png);
 			}
 
-			.sector-cell.tile.tree-1:after {
+			.sector-cell.tile.tile-tree-1:after {
 				background-image: url(../tiles/tree-1.png);
 			}
 
-			.sector-cell.tile.trees-0:after {
+			.sector-cell.tile.tile-trees-0:after {
 				background-image: url(../tiles/trees-0.png);
 			}
 
-			.sector-cell.tile.tree-1:after {
+			.sector-cell.tile.tile-tree-1:after {
 				background-image: url(../tiles/trees-1.png);
 			}
 
-			.sector-cell.tile.way-0:after {
+			.sector-cell.tile.tile-way-0:after {
 				background-image: url(../tiles/way-0.png);
 			}
 
-			.sector-cell.tile.way-1:after {
+			.sector-cell.tile.tile-way-1:after {
 				background-image: url(../tiles/way-1.png);
 			}
 
-			.sector-cell.tile.light-0:after {
+			.sector-cell.tile.tile-light-0:after {
 				background-image: url(../tiles/light-0.png);
 			}
 
-			.sector-cell.tile.light-1:after {
+			.sector-cell.tile.tile-light-1:after {
 				background-image: url(../tiles/light-1.png);
 			}
 
-			.sector-cell.tile.partition-0:after {
+			.sector-cell.tile.tile-partition-0:after {
 				background-image: url(../tiles/partition-0.png);
 			}
 
-			.sector-cell.tile.partition-1:after {
+			.sector-cell.tile.tile-partition-1:after {
 				background-image: url(../tiles/partition-1.png);
 			}
 
-			.sector-cell.tile.partition-2:after {
+			.sector-cell.tile.tile-partition-2:after {
 				background-image: url(../tiles/partition-2.png);
 			}
 
-			.sector-cell.tile.partition-3:after {
+			.sector-cell.tile.tile-partition-3:after {
 				background-image: url(../tiles/partition-3.png);
 			}
 
-			.sector-cell.tile.arr-0:after {
+			.sector-cell.tile.tile-arr-0:after {
 				background-image: url(../tiles/arr-0.png);
 			}
 
-			.sector-cell.tile.arr-1:after {
+			.sector-cell.tile.tile-arr-1:after {
 				background-image: url(../tiles/arr-1.png);
 			}
 
-			.sector-cell.tile.arr-2:after {
+			.sector-cell.tile.tile-arr-2:after {
 				background-image: url(../tiles/arr-2.png);
 			}
 
-			.sector-cell.tile.arr-3:after {
+			.sector-cell.tile.tile-arr-3:after {
 				background-image: url(../tiles/arr-3.png);
 			}
 
-			.sector-cell.tile.arr-4:after {
+			.sector-cell.tile.tile-arr-4:after {
 				background-image: url(../tiles/arr-4.png);
 			}
 
-			.sector-cell.tile.arr-5:after {
+			.sector-cell.tile.tile-arr-5:after {
 				background-image: url(../tiles/arr-5.png);
 			}
 
-			.sector-cell.tile.arr-6:after {
+			.sector-cell.tile.tile-arr-6:after {
 				background-image: url(../tiles/arr-6.png);
 			}
 
-			.sector-cell.tile.arr-7:after {
+			.sector-cell.tile.tile-arr-7:after {
 				background-image: url(../tiles/arr-7.png);
 			}
 
-			.sector-cell.tile.arr-8:after {
+			.sector-cell.tile.tile-arr-8:after {
 				background-image: url(../tiles/arr-8.png);
 			}
 
-			.sector-cell.tile.arr-9:after {
+			.sector-cell.tile.tile-arr-9:after {
 				background-image: url(../tiles/arr-9.png);
 			}
 
-			.sector-cell.tile.arr-10:after {
+			.sector-cell.tile.tile-arr-10:after {
 				background-image: url(../tiles/arr-10.png);
 			}
 
-			.sector-cell.tile.barrier-0:after {
+			.sector-cell.tile.tile-barrier-0:after {
 				background-image: url(../tiles/barrier-0.png);
 			}
 
-			.sector-cell.tile.barrier-1:after {
+			.sector-cell.tile.tile-barrier-1:after {
 				background-image: url(../tiles/barrier-1.png);
 			}
 
-			.sector-cell.tile.barrier-2:after {
+			.sector-cell.tile.tile-barrier-2:after {
 				background-image: url(../tiles/barrier-2.png);
 			}
 
-			.sector-cell.tile.barrier-3:after {
+			.sector-cell.tile.tile-barrier-3:after {
 				background-image: url(../tiles/barrier-3.png);
 			}
 		}
@@ -1103,11 +1136,11 @@ body.SCANNED #APP .root-component main {
 					left: 0;
 					display: inline-block;
 					margin-top: 10px;
-					padding: 12px 0 0 5px;
+					padding: 0;
 					width: 24px;
 					height: 24px;
 					color: $gray-100;
-					line-height: 0;
+					line-height: 24px;
 					border-radius: 50%;
 					background-color: $blue;
 				}
@@ -1126,6 +1159,7 @@ body.SCANNED #APP .root-component main {
 
 				i {
 					left: $spacer;
+					height: initial;
 				}
 			}
 
@@ -1192,10 +1226,10 @@ body.SCANNED #APP .root-component main {
 		}
 
 		.btn-group {
-			box-shadow: 0 4px 4px rgba(61, 134, 221, 0.1);
 
 			button {
 				border: 1px solid #EDF3FC;
+				box-shadow: 0 4px 4px rgba(61, 134, 221, 0.1);
 			}
 
 			button:first-child {
@@ -1429,6 +1463,7 @@ body.SCANNED #APP .root-component main {
 		}
 
 		.filter-wrapper {
+			margin: 0 12px;
 
 			.item {
 				position: relative;
@@ -1454,8 +1489,19 @@ body.SCANNED #APP .root-component main {
 				}
 			}
 
-			.item:first-child {
-				border-top: 1px solid #EEF0F2;
+			.item:nth-child(2n) {
+				margin-bottom: 12px;
+				border-top: none !important;
+			}
+
+			.item:nth-child(odd) {
+				border-top-left-radius: 6px;
+				border-top-right-radius: 6px;
+			}
+
+			.item:nth-child(even) {
+				border-bottom-left-radius: 6px;
+				border-bottom-right-radius: 6px;
 			}
 		}
 	}
@@ -1475,6 +1521,19 @@ body.SCANNED #APP .root-component main {
 				text-align: center;
 				border-radius: 50%;
 				background-color: $primary;
+				display: none;
+			}
+
+			span {
+				position: relative;
+				z-index: -1;
+			}
+		}
+
+		.item.active {
+
+			i {
+				display: block;
 			}
 		}
 	}
@@ -1489,11 +1548,12 @@ body.SCANNED #APP .root-component main {
 			width: 72px;
 			height: 72px;
 			margin-right: $spacer;
+			overflow: hidden;
+			border-radius: 50%;
 
 			img {
 				width: 100%;
 				height: initial;
-				border-radius: 50%;
 			}
 		}
 
