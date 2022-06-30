@@ -48,7 +48,7 @@ video {
 html, body,
 html body #APP,
 html body #APP .root-component {
-	background-color: transparent !important;
+		background-color: transparent !important;
 }
 
 body.SCANNED #APP .root-component main {
@@ -83,34 +83,23 @@ body.SCANNED #APP .root-component header {
 	padding-left: $spacer;
 }
 
-.form-control {
-	line-height: 46px;
-	padding: 0 20px;
-	height: initial;
-	font-size: 16px;
-	box-shadow: 0 5px 10px rgba(95, 114, 147, 0.2)
-}
-
-.form-control:focus,
-.form-control:hover,
-.form-control:active {
-	box-shadow: 0 5px 10px rgba(95, 114, 147, 0.2)
-}
-
 .input-group {
 	position: relative;
 
 	.group-icon-help {
+		display: flex;
 		position: absolute;
 		z-index: 10;
-		top: 0;
+		top: 1px;
 		right: 0;
-		width: 80px;
+		width: 70px;
 		height: 100%;
 		text-align: center;
+		align-items: center;
+		justify-content: center;
 
 		.icon {
-			font-size: 25px;
+			font-size: 26px;
 			line-height: 2;
 		}
 	}
@@ -157,7 +146,17 @@ body.SCANNED #APP .root-component header {
 	}
 }
 
+.modal.fade {
+	display: initial;
+}
+
 /******************************* APP *******************************/
+
+body video,
+main, header, footer {
+	background-color: $body-bg;
+}
+
 #APP {
 	display: flex;
 	overflow: hidden;
@@ -165,14 +164,73 @@ body.SCANNED #APP .root-component header {
 	height: 100vh;
 	position: relative;
 
-	.items {
+	@each $value in $overflows {
+		.overflow-x-#{$value} { overflow-x: $value !important; }
+	}
 
-		.list {
+	@each $value in $overflows {
+		.overflow-y-#{$value} { overflow-y: $value !important; }
+	}
 
-			.item {
+	@each $color, $value in $colors {
+		.text-#{$color} {
+			color: $value;
+		}
+	}
 
-				h4 {
+	@each $color, $value in $colors {
+		.bg-#{$color} {
+			background-color: $value;
+		}
+	}
 
+	@each $size, $value in $sizes {
+		.text-size-#{$size} {
+			font-size: $value;
+		}
+	}
+
+	.top-shadow {
+		box-shadow: $box-top-shadow !important;
+	}
+
+	.container.items,
+	.container-fluid.items {
+
+		.col.item:after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 5px;
+			height: 100%;
+			border-radius: $border-radius 0 0 $border-radius;
+		}
+
+		@each $color, $value in $theme-colors {
+			.col.item.#{$color}:after {
+				background-color: $value;
+			}
+		}
+
+		.col.item {
+			background-color: $sub-color;
+
+			.notice:before {
+				content: '';
+				display: block;
+				position: absolute;
+				top: 50%;
+				left: 0;
+				margin-top: -4px;
+				width: 8px;
+				height: 8px;
+				border-radius: 50%;
+			}
+
+			@each $color, $value in $theme-colors {
+				.notice.#{$color}:before {
+					background-color: theme-color($color);
 				}
 			}
 		}
@@ -180,10 +238,6 @@ body.SCANNED #APP .root-component header {
 
 	.root-component {
 		transition: $transition-base;
-	}
-
-	.root-component.active + .root-component {
-		position: absolute;
 	}
 
 	.root-component#AUTH {
@@ -195,6 +249,7 @@ body.SCANNED #APP .root-component header {
 		vertical-align: middle;
 		flex-direction: column;
 		align-items: flex-start;
+		background-color: $root-component-full !important;
 
 		.input-group {
 
@@ -228,8 +283,8 @@ body.SCANNED #APP .root-component header {
 	header {
 		z-index: $header-index;
 		padding: $spacer;
-		box-shadow: $item-shadow;
 		transition: $transition-base;
+		background-color: $header-bg;
 
 		h1 {
 			line-height: 28px;
@@ -237,13 +292,14 @@ body.SCANNED #APP .root-component header {
 
 			+ i.icon-chevron_right {
 				position: relative;
-				top: 1px;
-				font-size: 26px;
 			}
 		}
 
-		i.icon-chevron_left {
+		.icon {
 			font-size: 28px;
+		}
+
+		i.icon-chevron_left {
 			margin-right: 15px;
 		}
 	}
@@ -252,9 +308,9 @@ body.SCANNED #APP .root-component header {
 		width: 100%;
 		z-index: $header-header-index;
 		padding: $half-spacer $spacer;
-		box-shadow: $item-shadow;
 		position: relative;
 		min-height: initial;
+		background-color: $sub-color;
 
 		.thumb {
 			width: 45px;
@@ -267,11 +323,12 @@ body.SCANNED #APP .root-component header {
 		height: 100vh;
 		overflow-y: hidden;
 		padding: 0 0 62px 0;
-		z-index: $main-index !important;
+		z-index: $main-index;
 		margin-top: 0;
 		transition: .9s;
 		position: relative;
 		padding-bottom: 51px;
+		background-color: $main-bg;
 
 		.filter {
 			display: flex;
@@ -304,6 +361,10 @@ body.SCANNED #APP .root-component header {
 				margin-left: 0;
 			}
 
+			.filter-btn.active {
+				border-color: theme-color('primary');
+			}
+
 			.filter-btn:after {
 				content: '';
 				display: block;
@@ -316,22 +377,16 @@ body.SCANNED #APP .root-component header {
 				border-radius: 50%;
 				background-color: $blue;
 			}
+
+			@each $theme, $value in $theme-colors {
+				.filter-btn#{$theme}:after {
+					background-color: theme-color($value);
+				}
+			}
 		}
 
 		.filter::-webkit-scrollbar {
 			display: none;
-		}
-
-		.content-wrapper {
-			padding: $spacer;
-			height: 100%;
-			overflow-y: scroll;
-		}
-
-		.content-wrapper + .content-wrapper {
-			padding-top: 0;
-			height: initial;
-			overflow: initial;
 		}
 
 		.sticker {
@@ -349,10 +404,9 @@ body.SCANNED #APP .root-component header {
 	}
 
 	footer {
-		background-color: $gray-100;
-		box-shadow: $item-shadow;
 		z-index: $footer-index;
 		transition: .3s;
+		background-color: $footer-bg;
 
 		position: fixed !important;
 		bottom: 0;
@@ -360,6 +414,14 @@ body.SCANNED #APP .root-component header {
 		menu {
 			position: relative;
 			width: 100%;
+
+			a, span,
+			a:hover, a:focus, a:active,
+			span:hover, span:focus, span:active,
+			a:hover div, a:focus div, a:active div,
+			span:hover div, span:focus div, span:active div {
+				color: $text-muted;
+			}
 
 			a, span {
 				padding: $half-spacer 0;
@@ -393,6 +455,12 @@ body.SCANNED #APP .root-component header {
 					z-index: -10;
 				}
 			}
+
+			a.active, span.active,
+			a.active i, span.active i,
+			a.active div, span.active div {
+				color: $body-color;
+			}
 		}
 	}
 
@@ -406,7 +474,7 @@ body.SCANNED #APP .root-component header {
 			display: flex;
 			align-items: center;
 			padding: $half-spacer $spacer;
-			color: $gray-900;
+			color: $body-color;
 			line-height: 19px;
 			transition: .3s;
 
@@ -416,21 +484,23 @@ body.SCANNED #APP .root-component header {
 
 			span.before {
 				position: relative;
-				display: block;
+				display: flex;
+				justify-content: space-evenly;
+				align-items: center;
 				width: 32px;
 				height: 32px;
 				margin-right: $spacer;
 				line-height: 32px;
 				text-align: center;
 				border-radius: 50%;
+			}
+		}
 
-				i {
-					position: absolute;
-					left: 50%;
-					top: 50%;
-					margin-top: -7px;
-					margin-left: -7px;
-				}
+		.item.active {
+			@include gradient-bg(theme-color-level('info', $alert-bg-level));
+
+			span.before {
+				background-color: $sub-color;
 			}
 		}
 	}
@@ -460,19 +530,31 @@ body.SCANNED #APP .root-component header {
 		bottom: -150vh;
 		width: 100%;
 		transition: .3s;
+		background-color: $sub-color;
 
-		.root-component {
+		.widget-content {
+			background-color: $sub-color;
+
+			header {
+				position: fixed;
+				z-index: $widget-index + 1;
+			}
 
 			main {
-
+				transition: none;
+				z-index: $widget-index;
 			}
-		}
 
-		main {
-			height: 100%;
+			header {
+				+ main{
+					padding-top: 60px;
+				}
+			}
 
-			.content-wrapper {
-				padding-bottom: 63px;
+			header.with-search {
+				+ main{
+					padding-top: 110px;
+				}
 			}
 		}
 
@@ -480,9 +562,9 @@ body.SCANNED #APP .root-component header {
 			z-index: $widget-index;
 			position: relative;
 			padding-bottom: 51px;
-			background-color: $body-bg;
 			border-radius: 16px;
 			overflow: hidden;
+			background-color: $sub-color;
 
 			menu {
 				margin-top: 20px;
@@ -499,6 +581,7 @@ body.SCANNED #APP .root-component header {
 					font-size: 13px;
 					line-height: 38px;
 					margin-right: 7px;
+					color: $link-color;
 				}
 
 				h1 {
@@ -567,165 +650,49 @@ body.SCANNED #APP .root-component header {
 			height: 100%;
 			overflow: hidden;
 			border-radius: 0;
-
-			.widget-meta {
-				box-shadow: 0 0 20px rgba(95, 114, 147, 0.2);
-			}
-		}
-
-		.car {
-
-			.car-props {
-				box-shadow: none;
-			}
 		}
 	}
 
-	.tabs {
-		display: flex;
-		flex-direction: row;
+	.nav.nav-tabs {
+		align-items: stretch;
 
-		width: 100%;
-		height: 100%;
-		overflow: hidden;
-		align-self: center;
+		.nav-item {
+			position: relative;
+			padding: $spacer $half-spacer;
+			white-space: pre;
+			font-weight: 700;
 
-		.tab-content {
-			width: 100%;
-			height: 100%;
-			padding-top: 45px;
-
-			.content-wrapper {
-				height: 100%;
-				overflow-y: scroll;
-			}
+			// Xiaomi
+			display: flex;
+			justify-content: center;
+			align-items: center;
 		}
 
-		.tab-list {
-			position: fixed;
+		.nav-item.active:after {
+			position: absolute;
+			bottom: 0;
+			left: 0;
 			z-index: 10;
+			content: "";
 			width: 100%;
-			height: 47px;
-
-			.tab-wrapper {
-				width: 100%;
-				height: 100%;
-				padding: 18px;
-				display: flex;
-				overflow: auto;
-				position: relative;
-
-				.tab {
-					white-space: pre;
-					position: relative;
-					display: inline-block;
-					padding: 0 $spacer;
-					font-weight: bold;
-					line-height: 13px;
-				}
-
-				.tab.active:after {
-					position: absolute;
-					bottom: -18px;
-					left: 0;
-					z-index: 10;
-					content: "";
-					width: 100%;
-				}
-			}
-
-			.tab-wrapper:after {
-				position: absolute;
-				bottom: 0;
-				left: 0;
-				content: "";
-				width: 100%;
-			}
+			border-bottom: 2px solid $nav-tabs-link-active-border-color;
 		}
+
+		.nav-item.flex-fill {
+			flex: 1 1 0!important;
+		}
+	}
+
+	.nav.nav-tabs + .tab-content{
+		padding-top: 48px;
 	}
 
 	.card {
-		position: relative;
-		border-radius: 2px;
-		margin-bottom: $spacer;
-		box-shadow: $item-shadow;
-
-		.card-title {
-			font-weight: bold;
-		}
+		border-radius: 0;
+		background-color: $sub-color;
 
 		.card-link {
-			display: inline-block;
-			margin-top: $spacer;
-			line-height: 19px;
-		}
-	}
-
-	.sectors {
-
-		.item {
-			position: relative;
-			margin: 0 0 $spacer 0;
-			padding: $spacer 20px;
-			border-radius: 5px;
-			box-shadow: $item-shadow;
-			transition: .3s;
-
-			.name {
-				font-size: 17px;
-				font-weight: bold;
-				line-height: 22px;
-				text-transform: uppercase;
-			}
-
-			.filled {
-				font-weight: 500;
-				font-size: 10px;
-				line-height: 13px;
-				margin-top: 5px;
-				margin-bottom: $half-spacer;
-			}
-
-			.cars {
-				display: flex;
-				justify-content: space-between;
-
-				.count {
-
-					span {
-						font-weight: bold;
-						font-size: 11px;
-						line-height: 15px;
-					}
-
-					:last-child {
-						line-height: 19px;
-						margin-left: 10px;
-					}
-				}
-			}
-		}
-
-		.item:after {
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			height: 100%;
-			width: 4px;
-			border-radius: 5px 0 0 5px;
-			background-color: gray;
-		}
-
-		@each $color, $value in $theme-colors {
-			.item.#{$color}:after {
-				background-color: theme-color($color);
-			}
-		}
-
-		.item:active,
-		.item:hover {
-			box-shadow: $item-shadow;
+			color: $link-color;
 		}
 	}
 
@@ -756,6 +723,7 @@ body.SCANNED #APP .root-component header {
 					width: 23px;
 					height: 23px;
 					border-radius: 50%;
+					background: theme-color('danger');
 
 					i {
 						position: absolute;
@@ -963,6 +931,114 @@ body.SCANNED #APP .root-component header {
 			.sector-cell.tile.tile-barrier-3:after {
 				background-image: url(../tiles/barrier-3.png);
 			}
+
+			.sector-cell.tile.tile-build-1:after {
+				background-image: url(../tiles/build-1.png);
+			}
+
+			.sector-cell.tile.tile-build-2:after {
+				background-image: url(../tiles/build-2.png);
+			}
+
+			.sector-cell.tile.tile-build-3:after {
+				background-image: url(../tiles/build-3.png);
+			}
+
+			.sector-cell.tile.tile-build-4:after {
+				background-image: url(../tiles/build-4.png);
+			}
+
+			.sector-cell.tile.tile-build-5:after {
+				background-image: url(../tiles/build-5.png);
+			}
+
+			.sector-cell.tile.tile-build-6:after {
+				background-image: url(../tiles/build-6.png);
+			}
+
+			.sector-cell.tile.tile-busy-1:after {
+				background-image: url(../tiles/busy-1.png);
+			}
+
+			.sector-cell.tile.tile-busy-2:after {
+				background-image: url(../tiles/busy-2.png);
+			}
+
+			.sector-cell.tile.tile-busy-3:after {
+				background-image: url(../tiles/busy-3.png);
+			}
+
+			.sector-cell.tile.tile-busy-4:after {
+				background-image: url(../tiles/busy-4.png);
+			}
+
+			.sector-cell.tile.tile-green-1:after {
+				background-image: url(../tiles/green-1.png);
+			}
+
+			.sector-cell.tile.tile-green-2:after {
+				background-image: url(../tiles/green-2.png);
+			}
+
+			.sector-cell.tile.tile-green-3:after {
+				background-image: url(../tiles/green-3.png);
+			}
+
+			.sector-cell.tile.tile-green-4:after {
+				background-image: url(../tiles/green-4.png);
+			}
+
+			.sector-cell.tile.tile-yellow-1:after {
+				background-image: url(../tiles/yellow-1.png);
+			}
+
+			.sector-cell.tile.tile-yellow-2:after {
+				background-image: url(../tiles/yellow-2.png);
+			}
+
+			.sector-cell.tile.tile-yellow-3after {
+				background-image: url(../tiles/yellow-3.png);
+			}
+
+			.sector-cell.tile.tile-yellow-4:after {
+				background-image: url(../tiles/yellow-4.png);
+			}
+
+			.sector-cell.tile.tile-narr-1:after {
+				background-image: url(../tiles/narr-1.png);
+			}
+
+			.sector-cell.tile.tile-narr-2:after {
+				background-image: url(../tiles/narr-2.png);
+			}
+
+			.sector-cell.tile.tile-narr-3:after {
+				background-image: url(../tiles/narr-3.png);
+			}
+
+			.sector-cell.tile.tile-narr-4:after {
+				background-image: url(../tiles/narr-4.png);
+			}
+
+			.sector-cell.tile.tile-narr-5:after {
+				background-image: url(../tiles/narr-5.png);
+			}
+
+			.sector-cell.tile.tile-narr-6:after {
+				background-image: url(../tiles/narr-6.png);
+			}
+
+			.sector-cell.tile.tile-narr-7:after {
+				background-image: url(../tiles/narr-7.png);
+			}
+
+			.sector-cell.tile.tile-narr-8:after {
+				background-image: url(../tiles/narr-8.png);
+			}
+
+			.sector-cell.tile.tile-flash-1:after {
+				background-image: url(../tiles/flash-1.png);
+			}
 		}
 
 		.sector-row:first-child .sector-cell:last-child {
@@ -982,64 +1058,6 @@ body.SCANNED #APP .root-component header {
 		}
 	}
 
-	.cars {
-
-		.item {
-			position: relative;
-			margin: 0 0 $spacer 0;
-			padding: $spacer;
-			border-radius: 5px;
-			transition: .3s;
-			box-shadow: $item-shadow;
-
-			.notice:before {
-				content: '';
-				display: block;
-				position: absolute;
-				top: 50%;
-				left: 0;
-				margin-top: -4px;
-				width: 8px;
-				height: 8px;
-				border-radius: 50%;
-				background-color: gray;
-			}
-
-			.name {
-				font-size: 17px;
-				line-height: 22px;
-				font-weight: bold;
-			}
-
-			.description {
-				font-size: 10px;
-				font-weight: 500;
-				line-height: 13px;
-				margin-top: $half-spacer;
-			}
-
-			.bg-info {
-				font-size: 11px;
-				border-radius: 8px;
-
-				i {
-					position: relative;
-					top: 2px;
-					font-size: 16px;
-				}
-			}
-
-		}
-
-		@each $color, $value in $theme-colors {
-			.item.#{$color} {
-				.notice:before {
-					background-color: theme-color($color);
-				}
-			}
-		}
-	}
-
 	.car {
 		height: 100%;
 		padding: 0;
@@ -1047,7 +1065,6 @@ body.SCANNED #APP .root-component header {
 		.car-props {
 			padding: $spacer $spacer $spacer 100px;
 			border-radius: 2px;
-			box-shadow: $item-shadow;
 			background: transparent url(../img/car-preview.png) 0 0 no-repeat;
 
 			h2 {
@@ -1093,7 +1110,7 @@ body.SCANNED #APP .root-component header {
 
 			.status-wrapper.alert {
 				position: relative;
-				margin-right: -16px;
+				margin-right: -12px;
 				margin-bottom: 12px;
 				padding-left: 55px;
 				border-top-left-radius: 8px;
@@ -1159,9 +1176,7 @@ body.SCANNED #APP .root-component header {
 
 	.card-checkbox {
 		position: relative;
-		margin-bottom: $half-spacer;
-		border-radius: 2px;
-		box-shadow: $item-shadow;
+		background-color: $sub-color;
 
 		.name {
 			padding: $spacer;
@@ -1184,7 +1199,7 @@ body.SCANNED #APP .root-component header {
 			width: 24px;
 			height: 24px;
 			margin-top: -10px;
-			border: 2px solid $gray-900;
+			border: 2px solid $body-color;
 			box-sizing: border-box;
 			border-radius: 8px;
 		}
@@ -1196,9 +1211,20 @@ body.SCANNED #APP .root-component header {
 			content: "";
 			width: 12px;
 			height: 12px;
-			border: 2px solid theme-color('primary');
+			border: 2px solid $body-color;
 			border-radius: 50%;
-			background: $gray-700;
+		}
+
+		.checkbox.active:before {
+			position: absolute;
+			top: 7px;
+			left: 7px;
+			content: "";
+			width: 6px;
+			height: 6px;
+			border-radius: 50%;
+			border-color: transparent;
+			background: theme-color('primary');
 		}
 	}
 
@@ -1213,6 +1239,8 @@ body.SCANNED #APP .root-component header {
 			height: 150px;
 			margin-top: -75px;
 			margin-left: -75px;
+			border: 4px solid $gray-700;
+			border-top-color: theme-color('primary');
 		}
 
 		.tools {
@@ -1228,12 +1256,12 @@ body.SCANNED #APP .root-component header {
 			span {
 				position: relative;
 				width: 25%;
-				color: #fff;
+				color: $gray-100;
 				font-size: 28px;
 				text-align: center;
 
 				i {
-					color: #fff;
+					color: $gray-100;
 					font-size: 28px;
 				}
 			}
@@ -1349,6 +1377,7 @@ body.SCANNED #APP .root-component header {
 		margin: 0;
 		min-height: initial;
 		padding-bottom: 75px;
+		background-color: transparent;
 
 		.btn-filter {
 			position: absolute;
@@ -1377,6 +1406,7 @@ body.SCANNED #APP .root-component header {
 					line-height: 40px;
 					padding: 0 $spacer;
 					border: none;
+					box-shadow: none;
 				}
 
 				i {
@@ -1388,14 +1418,24 @@ body.SCANNED #APP .root-component header {
 				}
 			}
 
+			.item {
+				position: relative;
+				border-top: none;
+				border-bottom: none;
+				border-right: $input-border-width solid $input-border-color;
+				border-left: $input-border-width solid $input-border-color;
+			}
+
 			.item:nth-child(odd) {
 				border-bottom: none;
+				border-top: $input-border-width solid $input-border-color;
 				border-top-left-radius: 3px;
 				border-top-right-radius: 3px;
 			}
 
 			.item:nth-child(even) {
 				border-top: none;
+				border-bottom: $input-border-width solid $input-border-color;
 				border-bottom-left-radius: 3px;
 				border-bottom-right-radius: 3px;
 				margin-bottom: 12px;
@@ -1418,6 +1458,8 @@ body.SCANNED #APP .root-component header {
 				text-align: center;
 				border-radius: 50%;
 				display: none;
+				color: $text-muted;
+				background-color: theme-color('primary');
 			}
 
 			span {
@@ -1495,11 +1537,12 @@ body.SCANNED #APP .root-component header {
 		bottom: 150px;
 		left: 50%;
 		width: 230px;
-		margin-left:  -115px;
+		margin-left: -115px;
 		border-radius: 8px;
 		padding: $spacer;
 		text-align: center;
-		box-shadow: 0 0 20px rgba(95, 114, 147, 0.2);
+		background: #192534;
+		box-shadow: $box-shadow;
 
 		.icon-qr_code {
 			position: relative;
@@ -1630,6 +1673,7 @@ body.SCANNED #APP .root-component header {
 	}
 
 	.profile-info {
+		transition: .3s;
 		padding: $spacer;
 		border-radius: 0 !important;
 
@@ -1677,7 +1721,7 @@ body.SCANNED #APP .root-component header {
 			}
 
 			.sticker > div.btn {
-				box-shadow: $item-shadow;
+				box-shadow: $box-shadow;
 			}
 		}
 	}
@@ -1692,6 +1736,10 @@ body.SCANNED #APP .root-component header {
 
 #APP.scrolling {
 	overflow: initial !important;
+
+	.sector-table {
+		overflow: initial !important;
+	}
 }
 
 @media (max-height: 545px) {
@@ -1699,18 +1747,4 @@ body.SCANNED #APP .root-component header {
 	#AUTH .contact-info {
 		display: none;
 	}
-}
-
-@each $theme, $vars in $_themes {
-
-	@each $v, $var in $vars {
-		@if($v == 'color'){
-			//$colors: map-merge($colors, $var);
-		}
-		@if($v == 'theme-colors'){
-			//$theme-colors: map-merge($theme-colors, $var);
-		}
-	}
-
-	//@include color-scheme($theme, $vars);
 }

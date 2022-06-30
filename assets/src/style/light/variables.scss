@@ -1,5 +1,6 @@
 
 
+
 $scanner-index: 15;
 $main-index: 25;
 $header-header-index: 30;
@@ -8,17 +9,22 @@ $header-index: 35;
 $widget-index: 40;
 $footer-index: 50;
 
+$item-shadow: 0 0 20px rgba(95, 114, 147, 0.2);
+
+$spacer: 16px !default;
+$half-spacer: 8px !default;
 
 $enable-rounded: true;
 $enable-shadows: true;
-// $enable-gradients: false;
+$enable-gradients: false;
 $enable-transitions: true;
 $enable-grid-classes: true;
 $enable-caret: true;
 $enable-print-styles: true;
 
 
-$white:    #fff !default;
+// Colors
+$white:  #fff !default;
 $gray-100: #f8f9fa !default;
 $gray-200: #e9ecef !default;
 $gray-300: #dee2e6 !default;
@@ -28,95 +34,55 @@ $gray-600: #6c757d !default;
 $gray-700: #495057 !default;
 $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
-$black:    #000 !default;
+$black: #000 !default;
 
-$grays: () !default;
-	$grays: map-merge(
-	(
-		"100": $gray-100,
-		"200": $gray-200,
-		"300": $gray-300,
-		"400": $gray-400,
-		"500": $gray-500,
-		"600": $gray-600,
-		"700": $gray-700,
-		"800": $gray-800,
-		"900": $gray-900
-	),
-$grays
-);
+$blue: #3d86dd !default;
+$indigo: #6610f2 !default;
+$purple: #6f42c1 !default;
+$pink: #e83e8c !default;
+$red: #FF653C !default;
+$orange: #FC9A0E !default;
+$yellow: #FCC300 !default;
+$green: #79CE4B !default;
+$teal: #20c997 !default;
+$cyan: #17a2b8 !default;
 
-$blue:    #007bff !default;
-$indigo:  #6610f2 !default;
-$purple:  #6f42c1 !default;
-$pink:    #e83e8c !default;
-$red:     #dc3545 !default;
-$orange:  #fd7e14 !default;
-$yellow:  #ffc107 !default;
-$green:   #28a745 !default;
-$teal:    #20c997 !default;
-$cyan:    #17a2b8 !default;
 
-$colors: () !default;
-$colors: map-merge(
-	(
-		"blue":       $blue,
-		"indigo":     $indigo,
-		"purple":     $purple,
-		"pink":       $pink,
-		"red":        $red,
-		"orange":     $orange,
-		"yellow":     $yellow,
-		"green":      $green,
-		"teal":       $teal,
-		"cyan":       $cyan,
-		"white":      $white,
-		"gray":       $gray-600,
-		"gray-dark":  $gray-800
-	),
-	$colors
-);
+$yiq-text-dark: $gray-900 !default;
+$yiq-text-light: $white !default;
 
-$primary:       $blue !default;
-$secondary:     $gray-600 !default;
-$success:       $green !default;
-$info:          $blue !default;
-$warning:       $yellow !default;
-$danger:        $red !default;
-$light:         $gray-100 !default;
-$dark:          $gray-800 !default;
 
-$theme-colors: () !default;
-$theme-colors: map-merge(
-	(
-		"primary":    $primary,
-		"secondary":  $secondary,
-		"success":    $success,
-		"info":       $info,
-		"warning":    $warning,
-		"danger":     $danger,
-		"light":      $light,
-		"dark":       $dark
-	),
-	$theme-colors
-);
+$colors: (
+		'blue': $blue,
+		'pink': $pink,
+		'indigo': $indigo,
+		'purple': $purple,
+		'red': $red,
+		'orange': $orange,
+		'yellow': $yellow,
+		'green': $green,
+		'teal': $teal,
+		'cyan': $cyan
+) !default;
+
+$theme-colors: (
+		"primary": $yellow,
+		"secondary": #e1e1e1,
+		"warning": $orange,
+		"danger": $red,
+		"success": $green,
+		"info": #eaf2fb,
+		"light": $gray-100,
+		"dark": $gray-800
+) !default;
 
 
 // Body
 $body-bg: $white !default;
 $body-color: #333 !default;
 $text-muted: #979797 !default;
-$small-font-size: 75% !default;
+$small-font-size: 70% !default;
 $transition: .3s !default;
-$overflows: auto, hidden, scroll !default;
-$spacer: 16px !default;
-$half-spacer: 8px !default;
-
-
-// Shadow
-$box-shadow: 0 .5rem 1rem rgba($black, .15) !default;
-$box-shadow: 0 0 20px rgba(95, 114, 147, 0.2) !default;
-
 
 // Link
 $link-color: $blue;
@@ -129,9 +95,10 @@ $link-hover-decoration: none;
 $input-border-width: 1px !default;
 $input-color: $body-color !default;
 $input-bg: $gray-200 !default;
-$input-border-color: $gray-300 !default;
-// $input-group-addon-bg: $gray-200 !default;
-// $input-group-addon-border-color: $gray-300 !default;
+$input-border-color: $gray-300;
+$input-border-width: 1px;
+$input-group-addon-bg: $gray-200 !default;
+$input-group-addon-border-color: $gray-300 !default;
 
 
 // Fonts
@@ -144,8 +111,7 @@ $font-size-sm: $font-size-base * .750 !default;
 $font-weight-normal: 500;
 $font-weight-light: 200;
 $font-weight-base: 500;
-$font-weight-bold: 700;
-$font-weight-bolder: 900;
+$font-weight-bold: 900;
 $font-family-sans-serif: 'Red Hat Display', "Gilroy", Arial, sans-serif !default;
 $font-family-monospace: 'Red Hat Display', "Gilroy", Arial, sans-serif, monospace !default;
 $font-family-base: $font-family-sans-serif !default;
@@ -185,10 +151,10 @@ $badge-padding-x: 10px;
 
 
 // Card
-// $card-cap-bg: #ededed !default;
-// $card-border-color: transparent;
-// $card-border-radius: 2px;
-// $card-spacer-x: 16px;
+$card-cap-bg: #ededed !default;
+$card-border-color: transparent;
+$card-border-radius: 2px;
+$card-spacer-x: 16px;
 
 
 // Modal
@@ -199,12 +165,16 @@ $modal-title-line-height: 24px;
 
 
 // Alert
-// $alert-bg-level: 0 !default;
-// $alert-color-level: 9 !default;
-// $alert-border-level: 0 !default;
+$alert-bg-level: 0 !default;
+$alert-color-level: 9 !default;
+$alert-border-level: 0 !default;
 
 
 // Themes
 $root-component-full: #eee !default;
 $header-bg: #fff !default;
+$header-shadow: 0 0 20px rgb(95 114 147 / 30%) !default;
 $footer-bg: #fff !default;
+$footer-menu-color: #979797;
+$footer-menu-color-active: $gray-900;
+$item-shadow: 0 0 20px rgb(0 0 0 / 20%) !default;

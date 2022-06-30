@@ -1,0 +1,473 @@
+
+@mixin scheme(){
+	body.#{$theme} video {
+		background-color: $body-bg !important;
+	}
+
+	#APP.#{$theme} {
+
+		main, header, footer {
+			background-color: $body-bg
+		}
+
+		.card {
+			box-shadow: $item-shadow;
+		}
+
+		.modal-content {
+			box-shadow: none;
+		}
+
+		.spinner {
+			border: 4px solid $gray-700;
+			border-top-color: theme-color('primary');
+		}
+
+		.text-loading {
+			background: linear-gradient(100deg, #eceff1 0%, #f6f7f8 50%, #eceff1 100%);
+		}
+
+		.root-component.inner-root-component {
+			background-color: $body-bg;
+		}
+
+		.root-component#AUTH {
+			background-color: $root-component-full !important;
+
+			input {
+				box-shadow: $item-shadow !important;
+			}
+		}
+
+		header {
+			box-shadow: $header-shadow;
+
+			.header-right {
+
+				.icon {
+					font-size: 28px;
+				}
+			}
+		}
+
+		header + header {
+			background-color: $header-bg;
+			box-shadow: $header-shadow;
+		}
+
+		main {
+			box-shadow: $item-shadow;
+			background-color: $body-bg;
+
+			.filter {
+
+				.filter-btn {
+					border-color: $gray-200;
+				}
+
+				.filter-btn.active {
+					border-color: theme-color('primary');
+				}
+
+				@each $theme, $value in $theme-colors {
+					.filter-btn#{$theme}:after {
+						background-color: theme-color($value);
+					}
+				}
+			}
+		}
+
+		footer {
+			box-shadow: $item-shadow;
+
+			menu {
+				color: $text-muted;
+
+
+				a, span, div {
+					color: $text-muted;
+
+					div {
+						color: $text-muted;
+					}
+
+					i {
+						color: $text-muted;
+					}
+				}
+
+				a:hover, a:focus, a:active,
+				span:hover, span:focus, span:active,
+				a:hover div, a:focus div, a:active div,
+				span:hover div, span:focus div, span:active div {
+					color: $text-muted;
+
+					div {
+						color: $text-muted;
+					}
+
+					i {
+						color: $text-muted;
+					}
+				}
+
+				a.active, span.active,
+				a.active i, span.active i,
+				a.active div, span.active div {
+					color: $black;
+				}
+			}
+		}
+
+		menu {
+
+			.item {
+				color: $body-color;
+
+				span.before {
+					background-color: theme-color('info');
+				}
+			}
+
+			.item.active {
+				background: $gray-100;
+			}
+		}
+
+		.widget {
+
+			.content {
+				background-color: $body-bg;
+
+				.widget-meta {
+					background-color: $header-bg;
+
+					span {
+						color: $link-color;
+					}
+				}
+			}
+		}
+
+		.widget.widget-high {
+
+			.content {
+
+				.widget-meta {
+					box-shadow: $item-shadow;
+				}
+			}
+		}
+
+		.tabs {
+
+			.tab-list {
+				box-shadow: $header-shadow;
+
+				.tab-wrapper {
+
+					.tab.active:after {
+						border-bottom: 2px solid theme-color('primary');
+					}
+				}
+
+				.tab-wrapper:after {
+					border-bottom: none;
+				}
+			}
+		}
+
+		.card {
+			box-shadow: $item-shadow;
+
+			.card-link {
+				color: $link-color;
+			}
+		}
+
+		.sectors {
+
+			.item {
+				box-shadow: $item-shadow;
+			}
+
+			.item:active,
+			.item:hover {
+				box-shadow: $item-shadow;
+			}
+
+			@each $color, $value in $theme-colors {
+				.item.#{$color}:after {
+					background-color: $value;
+				}
+			}
+		}
+
+		.sector-table {
+
+			.sector-row {
+
+				.sector-cell {
+
+					.status {
+						background: theme-color('danger');
+					}
+				}
+
+				.sector-cell.active {
+					border: 3px solid theme-color('primary');
+				}
+
+				.sector-cell.active:after {
+					border: 2px solid theme-color('primary');
+				}
+			}
+		}
+
+		.cars {
+
+			.item {
+				box-shadow: $item-shadow;
+			}
+
+			@each $color, $value in $theme-colors {
+				.item.#{$color} {
+					.notice:before {
+						background-color: theme-color($color);
+					}
+				}
+			}
+		}
+
+		.car {
+
+			.car-props {
+				box-shadow: $header-shadow;
+
+				.status-wrapper {
+
+					span {
+						color: $text-muted;
+					}
+
+					.status-text {
+
+						span {
+							color: $body-color;
+						}
+					}
+
+					i {
+						color: $gray-100;
+						background-color: color('blue');
+					}
+
+					@each $color, $value in $theme-colors {
+						i.#{$color} {
+							background-color: theme-color($color);
+						}
+					}
+				}
+
+				.prop {
+
+					span {
+						color: $text-muted;
+					}
+				}
+			}
+		}
+
+		.btn-checkbox {
+
+			.btn-group {
+
+				button {
+					border: 1px solid $gray-500;
+					box-shadow: $item-shadow;
+				}
+
+				button:first-child {
+					margin-left: -1px;
+				}
+
+				button.active {
+					border: 1px solid rgba(61, 134, 221, 0.5);
+				}
+
+				button.changed {
+					border: 1px solid theme-color('yellow');
+				}
+			}
+
+			textarea {
+				background: $gray-100;
+				border: 1px solid $gray-500;
+				box-shadow: $item-shadow;
+			}
+		}
+
+		.card-checkbox {
+			box-shadow: $item-shadow;
+
+			.name {
+				color: $body-color;
+			}
+
+			.description {
+				color: $body-color;
+			}
+
+			.checkbox {
+				border: 2px solid $body-color;
+			}
+
+			.checkbox.active:after {
+				border: 2px solid theme-color('yellow');
+				background: $gray-700;
+			}
+		}
+
+		.camera {
+
+			.tools {
+
+				span {
+					color: $gray-100;
+
+					i {
+						color: $gray-100;
+					}
+				}
+			}
+		}
+
+		.search-form {
+			line-height: 38px;
+
+			button {
+				color: $gray-100;
+				background: theme-color('yellow');
+			}
+
+			input[type="text"] {
+				box-shadow: $item-shadow;
+			}
+		}
+
+		.search-filter {
+			background-color: transparent;
+
+			.filter-wrapper {
+
+				.item {
+					position: relative;
+					border-top: none;
+					border-bottom: none;
+					border-right: $input-border-width solid $input-border-color;
+					border-left: $input-border-width solid $input-border-color;
+				}
+
+				.item:nth-child(odd) {
+					border-bottom: none;
+					border-top: $input-border-width solid $input-border-color;
+					border-top-left-radius: 3px;
+					border-top-right-radius: 3px;
+				}
+
+				.item:nth-child(even) {
+					border-top: none;
+					border-bottom: $input-border-width solid $input-border-color;
+					border-bottom-left-radius: 3px;
+					border-bottom-right-radius: 3px;
+					margin-bottom: 12px;
+				}
+			}
+		}
+
+		.life-search {
+
+			.item {
+
+				i {
+					color: $text-muted;
+					background-color: theme-color('yellow');
+				}
+			}
+		}
+
+		.blocks-wrapper {
+
+			.block {
+				box-shadow: $item-shadow;
+			}
+		}
+
+		.stick {
+			background: #192534;
+			box-shadow: $item-shadow;
+		}
+
+		#SIDER {
+
+			main {
+
+				.sticker > div.btn {
+					box-shadow: $item-shadow;
+				}
+			}
+		}
+
+		.tech-necessitates-wrapper {
+
+			.tech-necessitates {
+
+				.item {
+					padding: $spacer;
+					color: $body-color;
+					border: 1px solid $input-border-color;
+				}
+
+				.item.success {
+					border: 1px solid theme-color('success');
+				}
+
+				.item.danger {
+					border: 1px solid theme-color('danger');
+				}
+			}
+
+			.tech-necessitates.necessitates-danger {
+				.item {
+					border: 1px solid theme-color('danger');
+				}
+			}
+		}
+
+		.ticket-item {
+			box-shadow: $item-shadow;
+
+
+			.title {
+				color: $body-color;
+			}
+
+			.necessitates {
+
+				div {
+					color: $body-color;
+				}
+
+				div:before {
+					background-color: theme-color('danger');
+				}
+			}
+		}
+
+		.profile-info {
+			box-shadow: $header-shadow;
+			position: relative;
+			z-index: 1;
+		}
+	}
+}

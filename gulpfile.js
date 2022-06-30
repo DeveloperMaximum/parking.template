@@ -17,7 +17,7 @@ var path = {
 	},
 	src: {
 		html: 'assets/src/*.html',
-		style: 'assets/src/style/main.scss',
+		style: 'assets/src/style/*main.scss',
 		img: 'assets/src/img/*.*',
         tiles: 'assets/src/tiles/*.*',
 		fonts: 'assets/src/fonts/**/*.*'
@@ -73,6 +73,7 @@ gulp.task('html:build', function () {
 
 // сбор стилей
 gulp.task('css:build', function () {
+	let concatCss = require('gulp-concat-css');
 	return gulp.src(path.src.style) // получим main.scss
 		.pipe(sass())// scss -> css
 		.pipe(plumber()) // для отслеживания ошибок

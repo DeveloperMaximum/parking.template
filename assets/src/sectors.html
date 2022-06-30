@@ -4,7 +4,7 @@
     //= template/head.html
 </head>
 <body>
-    <div id="APP" class="container-fluid p-0">
+    <div id="APP" class="light container-fluid p-0">
 
         <div id="SECTORS" class="root-component d-flex flex-column">
 
@@ -18,57 +18,107 @@
             </header>
 
             <main>
-
-                <div class="content-wrapper">
-
-                    //= template/filter.html
-
-                    <div class="sectors">
-                        <div class="item danger">
-                            <div class="d-flex">
-                                <div class="name">Навес тип 1</div>
-                            </div>
-                            <div class="filled">Сектор заполнен</div>
-                            <div class="cars">
-                                <div class="count">
-                                    <span>Авто</span>
-                                    <span>253</span>
-                                </div>
-                                <div class="count">
-                                    <span>Из них с потребностями</span>
-                                    <span>23</span>
-                                </div>
-                            </div>
+                <div class="tabs w-100">
+                    <div class="tab-list">
+                        <div class="tab-wrapper">
+                            <div class="tab active" data-id="sectors">Сектора</div>
+                            <div class="tab " data-id="services">Сервисы</div>
+                            <div class="tab " data-id="zones">Зоны</div>
                         </div>
-                        <div class="item warning">
-                            <div class="d-flex">
-                                <div class="name">Навес тип 3</div>
-                            </div>
-                            <div class="filled">Сектор заполнен</div>
-                            <div class="cars">
-                                <div class="count">
-                                    <span>Авто</span>
-                                    <span>253</span>
-                                </div>
-                                <div class="count">
-                                    <span>Из них с потребностями</span>
-                                    <span>23</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item success">
-                            <div class="d-flex">
-                                <div class="name ">Навес тип 4</div>
-                            </div>
-                            <div class="filled">Сектор заполнен</div>
-                            <div class="cars">
-                                <div class="count">
-                                    <span>Авто</span>
-                                    <span>253</span>
-                                </div>
-                                <div class="count">
-                                    <span>Из них с потребностями</span>
-                                    <span>23</span>
+                    </div>
+                    <div class="tab-content w-100">
+                        <div class="content-wrapper">
+                            <div class="items">
+                                <div class="list sectors">
+                                    <div><a href="#/home/sector/2">
+                                        <div class="d-block item warning">
+                                            <div class="d-flex"><h4 class="text-body mb-0">Б</h4></div>
+                                            <div class="text-muted mt-1 mb-2 small">11 занято из 315</div>
+                                            <div class="cars">
+                                                <div class="count"><span class="text-muted">Авто</span><span
+                                                        class="text-body">11</span></div>
+                                                <div class="count"><span
+                                                        class="text-muted">Из них с потребностями</span><span
+                                                        class="text-body">2</span></div>
+                                            </div>
+                                        </div>
+                                    </a></div>
+                                    <div><a href="#/home/sector/1">
+                                        <div class="d-block item warning">
+                                            <div class="d-flex"><h4 class="text-body mb-0">А</h4></div>
+                                            <div class="text-muted mt-1 mb-2 small">7 занято из 143</div>
+                                            <div class="cars">
+                                                <div class="count"><span class="text-muted">Авто</span><span
+                                                        class="text-body">7</span></div>
+                                                <div class="count"><span
+                                                        class="text-muted">Из них с потребностями</span><span
+                                                        class="text-body">1</span></div>
+                                            </div>
+                                        </div>
+                                    </a></div>
+                                    <div><a href="#/home/sector/3">
+                                        <div class="d-block item success">
+                                            <div class="d-flex"><h4 class="text-body mb-0">В</h4></div>
+                                            <div class="text-muted mt-1 mb-2 small">Сектор свободен</div>
+                                            <div class="cars">
+                                                <div class="count"><span class="text-muted">Авто</span><span
+                                                        class="text-body">3</span></div>
+                                            </div>
+                                        </div>
+                                    </a></div>
+                                    <div><a href="#/home/sector/4">
+                                        <div class="d-block item success">
+                                            <div class="d-flex"><h4 class="text-body mb-0">Г</h4></div>
+                                            <div class="text-muted mt-1 mb-2 small">Сектор свободен</div>
+                                            <div class="cars">
+                                                <div class="count"><span class="text-muted">Авто</span><span
+                                                        class="text-body">1</span></div>
+                                            </div>
+                                        </div>
+                                    </a></div>
+                                    <div><a href="#/home/sector/5">
+                                        <div class="d-block item success">
+                                            <div class="d-flex"><h4 class="text-body mb-0">Д</h4></div>
+                                            <div class="text-muted mt-1 mb-2 small">Сектор свободен</div>
+                                            <div class="cars"></div>
+                                        </div>
+                                    </a></div>
+                                    <div><a href="#/home/sector/6">
+                                        <div class="d-block item success">
+                                            <div class="d-flex"><h4 class="text-body mb-0">Е</h4></div>
+                                            <div class="text-muted mt-1 mb-2 small">Сектор свободен</div>
+                                            <div class="cars"></div>
+                                        </div>
+                                    </a></div>
+                                    <div><a href="#/home/sector/7">
+                                        <div class="d-block item success">
+                                            <div class="d-flex"><h4 class="text-body mb-0">Ж</h4></div>
+                                            <div class="text-muted mt-1 mb-2 small">Сектор свободен</div>
+                                            <div class="cars"></div>
+                                        </div>
+                                    </a></div>
+                                    <div><a href="#/home/sector/8">
+                                        <div class="d-block item success">
+                                            <div class="d-flex"><h4 class="text-body mb-0">З</h4></div>
+                                            <div class="text-muted mt-1 mb-2 small">Сектор свободен</div>
+                                            <div class="cars"></div>
+                                        </div>
+                                    </a></div>
+                                    <div><a href="#/home/sector/9">
+                                        <div class="d-block item success">
+                                            <div class="d-flex"><h4 class="text-body mb-0">Сектор 9</h4></div>
+                                            <div class="text-muted mt-1 mb-2 small">Сектор свободен</div>
+                                            <div class="cars"></div>
+                                        </div>
+                                    </a></div>
+                                    <div><a href="#/home/sector/10">
+                                        <div class="d-block item success">
+                                            <div class="d-flex"><h4 class="text-body mb-0">Сектор 10</h4></div>
+                                            <div class="text-muted mt-1 mb-2 small">Сектор свободен</div>
+                                            <div class="cars"></div>
+                                        </div>
+                                    </a></div>
+                                    <div></div>
                                 </div>
                             </div>
                         </div>

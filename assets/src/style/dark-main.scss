@@ -1,4 +1,4 @@
-$theme: '#APP';
+$theme: '#APP.dark';
 
 
 $scanner-index: 15;
@@ -11,7 +11,7 @@ $footer-index: 50;
 
 
 $enable-rounded: true;
-$enable-shadows: true;
+// $enable-shadows: true;
 // $enable-gradients: false;
 $enable-transitions: true;
 $enable-grid-classes: true;
@@ -19,12 +19,13 @@ $enable-caret: true;
 $enable-print-styles: true;
 
 
-$white: #fff !default;
+// Colors
+$white:  #fff !default;
 $gray-100: #f8f9fa !default;
 $gray-200: #e9ecef !default;
 $gray-300: #dee2e6 !default;
 $gray-400: #ced4da !default;
-$gray-500: #adb5bd !default;
+$gray-500: #aeaeaf !default;
 $gray-600: #6c757d !default;
 $gray-700: #495057 !default;
 $gray-800: #343a40 !default;
@@ -32,75 +33,58 @@ $gray-900: #212529 !default;
 $black: #000 !default;
 
 
-$grays: () !default;
-$grays: map-merge(
-	(
-		"100": $gray-100,
-		"200": $gray-200,
-		"300": $gray-300,
-		"400": $gray-400,
-		"500": $gray-500,
-		"600": $gray-600,
-		"700": $gray-700,
-		"800": $gray-800,
-		"900": $gray-900
-	),
-	$grays
-);
+$yiq-text-dark: #232323 !default;
+$yiq-text-light: #979ca1 !default;
+$yiq-contrasted-threshold:  75 !default;
 
 
-$blue: #007bff !default;
+$blue: #15447c !default;
 $indigo: #6610f2 !default;
 $purple: #6f42c1 !default;
 $pink: #e83e8c !default;
-$red: #dc3545 !default;
-$orange: #fd7e14 !default;
-$yellow: #ffc107 !default;
-$green: #28a745 !default;
+$red: #7a250d !default;
+$orange: #b76f08 !default;
+$yellow: #a98200 !default;
+$green: #3c6c21 !default;
 $teal: #20c997 !default;
 $cyan: #17a2b8 !default;
-
 
 $colors: () !default;
 $colors: map-merge(
 	(
-		"blue": $blue,
-		"indigo": $indigo,
-		"purple": $purple,
-		"pink": $pink,
-		"red": $red,
-		"orange": $orange,
-		"yellow": $yellow,
-		"green": $green,
-		"teal": $teal,
-		"cyan": $cyan,
-		"white": $white,
-		"gray": $gray-600,
-		"gray-dark": $gray-800
+		'blue': $blue,
+		'pink': $pink,
+		'indigo': $indigo,
+		'purple': $purple,
+		'red': $red,
+		'orange': $orange,
+		'yellow': $yellow,
+		'green': $green,
+		'teal': $teal,
+		'cyan': $cyan,
 	),
 	$colors
 );
 
 
-$primary: $blue !default;
-$secondary: $gray-600 !default;
+$primary: $yellow !default;
+$secondary: #192536 !default;
 $success: $green !default;
 $info: $blue !default;
-$warning: $yellow !default;
+$warning: $orange !default;
 $danger: $red !default;
-$light: $gray-100 !default;
+$light: $gray-500 !default;
 $dark: $gray-800 !default;
-
 
 $theme-colors: () !default;
 $theme-colors: map-merge(
 	(
-		"primary": $primary,
-		"secondary": $secondary,
-		"success": $success,
-		"info": $info,
-		"warning": $warning,
-		"danger": $danger,
+		'primary': $primary,
+		'secondary': $secondary,
+		'warning': $warning,
+		'danger': $danger,
+		'success': $success,
+		'info': $info,
 		"light": $light,
 		"dark": $dark
 	),
@@ -142,9 +126,9 @@ $sizes: map-merge(
 
 
 // Body
-$body-bg: $white !default;
-$body-color: #333 !default;
-$text-muted: #979797 !default;
+$body-bg: #0E1621 !default;
+$body-color: #919191 !default;
+$text-muted: #62676c !default;
 $small-font-size: 80% !default;
 $transition: .3s !default;
 $overflows: auto, hidden, scroll !default;
@@ -152,19 +136,20 @@ $overflows: auto, hidden, scroll !default;
 $spacer: 16px !default;
 $half-spacer: 8px !default;
 
-$main-bg: #fff !default;
-$header-bg: #fff !default;
-$footer-bg: #fff !default;
-$sub-color: #fff !default;
+$header-bg: #111c2a !default;
+$main-bg: #0b121c !default;
+$footer-bg: #111c2a !default;
+$sub-color: #0e1e2e !default;
 
 
 // Shadow
 $box-shadow: 0 .5rem 1rem rgba($black, .15) !default;
 $box-top-shadow: 0 -.5rem 1rem rgba($black, .15) !default;
+$input-box-shadow: 0 0 10px rgba(95, 114, 147, 0.2) !default;
 
 
 // Link
-$link-color: $blue;
+$link-color: #1756a1;
 $link-decoration: none;
 $link-hover-color: initial;
 $link-hover-decoration: none;
@@ -173,10 +158,11 @@ $link-hover-decoration: none;
 // Input
 $input-border-width: 1px !default;
 $input-color: $body-color !default;
-$input-bg: $gray-200 !default;
-$input-border-color: $gray-300 !default;
-// $input-group-addon-bg: $gray-200 !default;
-// $input-group-addon-border-color: $gray-300 !default;
+$input-bg: #242F3D !default;
+$input-border-color: transparent;
+$input-group-addon-bg: #242F3D !default;
+$input-group-addon-border-color: transparent !default;
+$input-disabled-bg: $body-bg;
 
 
 // Fonts
@@ -230,17 +216,17 @@ $badge-padding-x: 10px;
 
 
 // Card
-// $card-cap-bg: #ededed !default;
-// $card-border-color: transparent;
-// $card-border-radius: 2px;
+$card-cap-bg: #242F3D !default;
+$card-border-color: transparent;
+$card-border-radius: $border-radius;
 // $card-spacer-x: 16px;
 
 
 // Modal
-$modal-content-bg: #fff !default;
-$modal-header-padding: $spacer $spacer $spacer;
-$modal-inner-padding: 0 $spacer $spacer $spacer;
-$modal-title-line-height: 24px;
+$modal-content-bg: $body-bg !default;
+$modal-header-padding: $spacer $spacer $spacer !default;
+$modal-inner-padding: 0 $spacer $spacer $spacer !default;
+$modal-title-line-height: 24px !default;
 $modal-content-border-width: 0 !default;
 $modal-content-border-color: transparent !default;
 $modal-header-border-width: 0 !default;
@@ -250,9 +236,14 @@ $modal-footer-border-color: transparent !default;
 
 
 // Alert
-// $alert-bg-level: 0 !default;
-// $alert-color-level: 9 !default;
-// $alert-border-level: 0 !default;
+$alert-bg-level: 5 !default;
+$alert-color-level: -5 !default;
+$alert-border-level: 7 !default;
+
+
+// List
+$list-group-bg: $body-bg !default;
+$list-group-border-color: #000 !default;
 
 
 // Themes
@@ -270,7 +261,6 @@ $nav-tabs-link-active-border-color: $primary !default;
 
 
 // todo
-@import "variables";
 @import "fonts/stylesheet";
 @import "icons/variables";
 @import "icons/style";
